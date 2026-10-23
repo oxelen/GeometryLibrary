@@ -74,6 +74,15 @@ public class CreateFiguresTest {
             Assertions.assertThrows(NotValidFigureParametersException.class, () -> triangle.setC(1d));
     }
 
+    @Test
+    public void squareTest() {
+        Rectangle rectangle = new Rectangle(10d, 10d);
+        Assertions.assertTrue(rectangle.isSquare());
+
+        rectangle.setA(1d);
+        Assertions.assertFalse(rectangle.isSquare());
+    }
+
 
     private static Stream<double[]> rectangleInvalidParameters() {
         return Stream.of(

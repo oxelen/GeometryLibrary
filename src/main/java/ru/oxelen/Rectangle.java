@@ -27,6 +27,10 @@ public class Rectangle extends Figure {
         this.b = b;
     }
 
+    public boolean isSquare() {
+        return this.a == this.b;
+    }
+
     @Override
     public double getPerimeter() {
         return 2 * (a + b);
