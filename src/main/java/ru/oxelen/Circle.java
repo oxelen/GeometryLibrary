@@ -8,12 +8,12 @@ import ru.oxelen.exception.NotValidFigureParametersException;
 public class Circle extends Figure {
     private double radius;
 
-    public Circle(double radius) throws NotValidFigureParametersException {
+    public Circle(double radius) {
         checkRadius(radius);
         this.radius = radius;
     }
 
-    public void setRadius(double radius) throws NotValidFigureParametersException {
+    public void setRadius(double radius) {
         checkRadius(radius);
         this.radius = radius;
     }
@@ -28,7 +28,7 @@ public class Circle extends Figure {
         return Math.PI * radius * radius;
     }
 
-    private void checkRadius(double radius) throws NotValidFigureParametersException {
+    private void checkRadius(double radius) {
         if (radius <= 0) {
             throw new NotValidFigureParametersException("Radius cannot be negative");
         }

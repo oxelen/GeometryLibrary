@@ -11,7 +11,7 @@ public class Triangle extends Figure {
     private double b;
     private double c;
 
-    public Triangle(double a, double b, double c) throws NotValidFigureParametersException {
+    public Triangle(double a, double b, double c) {
         checkTriangle(a, b, c);
 
         this.a = a;
@@ -19,19 +19,19 @@ public class Triangle extends Figure {
         this.c = c;
     }
 
-    public void setA(double a) throws NotValidFigureParametersException {
+    public void setA(double a) {
         checkTriangle(a, this.b, this.c);
 
         this.a = a;
     }
 
-    public void setB(double b) throws NotValidFigureParametersException {
+    public void setB(double b) {
         checkTriangle(this.a, b, this.c);
 
         this.b = b;
     }
 
-    public void setC(double c) throws NotValidFigureParametersException {
+    public void setC(double c) {
         checkTriangle(this.a, this.b, c);
 
         this.c = c;
@@ -48,7 +48,7 @@ public class Triangle extends Figure {
         return Math.sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
     }
 
-    private void checkTriangle(double a, double b, double c) throws NotValidFigureParametersException {
+    private void checkTriangle(double a, double b, double c) {
         if (a <= 0 || b <= 0 || c <= 0) {
             throw new NotValidFigureParametersException("Triangle parameters are invalid");
         }

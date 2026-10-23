@@ -10,19 +10,19 @@ public class Rectangle extends Figure {
     private double a;
     private double b;
 
-    public Rectangle(double a, double b) throws NotValidFigureParametersException {
+    public Rectangle(double a, double b) {
         checkRectangle(a, b);
 
         this.a = a;
         this.b = b;
     }
 
-    public void setA(double a) throws NotValidFigureParametersException {
+    public void setA(double a) {
         checkRectangle(a, this.b);
         this.a = a;
     }
 
-    public void setB(double b) throws NotValidFigureParametersException {
+    public void setB(double b) {
         checkRectangle(this.a, b);
         this.b = b;
     }
@@ -37,7 +37,7 @@ public class Rectangle extends Figure {
         return a * b;
     }
 
-    private void checkRectangle(double a, double b) throws NotValidFigureParametersException {
+    private void checkRectangle(double a, double b) {
         if (a <= 0 || b <= 0) {
             throw new NotValidFigureParametersException("Rectangle parameters are invalid");
         }

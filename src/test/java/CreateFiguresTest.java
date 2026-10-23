@@ -25,13 +25,8 @@ public class CreateFiguresTest {
     @ParameterizedTest
     @ValueSource(doubles = {-1d, 0d})
     public void setInvalidRadius(double radius) {
-        try {
             Circle circle = new Circle(1d);
-
             Assertions.assertThrows(NotValidFigureParametersException.class, () -> circle.setRadius(radius));
-        } catch (NotValidFigureParametersException e) {
-            throw new RuntimeException("Wrong test data: " + e.getMessage());
-        }
     }
 
     @Test
@@ -48,14 +43,9 @@ public class CreateFiguresTest {
     @ParameterizedTest
     @ValueSource(doubles = {-1d, 0d})
     public void setInvalidRectangleSides(double side) {
-        try {
             Rectangle rectangle = new Rectangle(1d, 1d);
-
             Assertions.assertThrows(NotValidFigureParametersException.class, () -> rectangle.setA(side));
             Assertions.assertThrows(NotValidFigureParametersException.class, () -> rectangle.setB(side));
-        } catch(NotValidFigureParametersException e) {
-            throw new RuntimeException("Wrong test data: " + e.getMessage());
-        }
     }
 
     @Test
@@ -75,7 +65,6 @@ public class CreateFiguresTest {
     @ParameterizedTest
     @ValueSource(doubles = {-1d, 0d})
     public void setInvalidTriangleSides(double side) {
-        try{
             Triangle triangle = new Triangle(2d, 3d, 4d);
 
             Assertions.assertThrows(NotValidFigureParametersException.class, () -> triangle.setA(side));
@@ -83,9 +72,6 @@ public class CreateFiguresTest {
             Assertions.assertThrows(NotValidFigureParametersException.class, () -> triangle.setC(side));
 
             Assertions.assertThrows(NotValidFigureParametersException.class, () -> triangle.setC(1d));
-        } catch(NotValidFigureParametersException e) {
-            throw new RuntimeException("Wrong test data: " + e.getMessage());
-        }
     }
 
 

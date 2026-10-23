@@ -11,25 +11,17 @@ public class CalculateFiguresTest {
     public void getCirclePerimeterTest() {
         double radius = 5d;
 
-        try {
-            Figure circle = new Circle(radius);
+        Figure circle = new Circle(radius);
 
-            Assertions.assertEquals(2 * Math.PI * radius, circle.getPerimeter());
-        } catch (NotValidFigureParametersException e) {
-            throw new RuntimeException("Wrong test data: " + e.getMessage());
-        }
+        Assertions.assertEquals(2 * Math.PI * radius, circle.getPerimeter());
     }
 
     @Test
     public void getCircleAreaTest() {
         double radius = 5d;
 
-        try {
-            Figure circle = new Circle(radius);
-            Assertions.assertEquals(Math.PI * radius * radius, circle.getArea());
-        } catch (NotValidFigureParametersException e) {
-            throw new RuntimeException("Wrong test data: " + e.getMessage());
-        }
+        Figure circle = new Circle(radius);
+        Assertions.assertEquals(Math.PI * radius * radius, circle.getArea());
     }
 
     @Test
@@ -37,12 +29,8 @@ public class CalculateFiguresTest {
         double a = 5;
         double b = 10;
 
-        try {
-            Figure rectangle = new Rectangle(a, b);
-            Assertions.assertEquals(2 * (a + b), rectangle.getPerimeter());
-        } catch (NotValidFigureParametersException e) {
-            throw new RuntimeException("Wrong test data: " + e.getMessage());
-        }
+        Figure rectangle = new Rectangle(a, b);
+        Assertions.assertEquals(2 * (a + b), rectangle.getPerimeter());
     }
 
     @Test
@@ -50,12 +38,9 @@ public class CalculateFiguresTest {
         double a = 5;
         double b = 10;
 
-        try {
-            Figure rectangle = new Rectangle(a, b);
-            Assertions.assertEquals(a * b, rectangle.getArea());
-        } catch (NotValidFigureParametersException e) {
-            throw new RuntimeException("Wrong test data: " + e.getMessage());
-        }
+
+        Figure rectangle = new Rectangle(a, b);
+        Assertions.assertEquals(a * b, rectangle.getArea());
     }
 
     @Test
@@ -64,12 +49,9 @@ public class CalculateFiguresTest {
         double b = 5;
         double c = 6;
 
-        try {
-            Figure triangle = new Triangle(a, b, c);
-            Assertions.assertEquals(a + b + c, triangle.getPerimeter());
-        } catch (NotValidFigureParametersException e) {
-            throw new RuntimeException("Wrong test data: " + e.getMessage());
-        }
+
+        Figure triangle = new Triangle(a, b, c);
+        Assertions.assertEquals(a + b + c, triangle.getPerimeter());
     }
 
     @Test
@@ -78,15 +60,11 @@ public class CalculateFiguresTest {
         double b = 5;
         double c = 6;
 
-        try {
-            Figure triangle = new Triangle(a, b, c);
-            double halfPerimeter = triangle.getPerimeter() / 2;
-            double targetArea = Math
-                    .sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
+        Figure triangle = new Triangle(a, b, c);
+        double halfPerimeter = triangle.getPerimeter() / 2;
+        double targetArea = Math
+                .sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
 
-            Assertions.assertEquals(targetArea, triangle.getArea());
-        } catch (NotValidFigureParametersException e) {
-            throw new RuntimeException("Wrong test data: " + e.getMessage());
-        }
+        Assertions.assertEquals(targetArea, triangle.getArea());
     }
 }
