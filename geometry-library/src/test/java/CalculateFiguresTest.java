@@ -4,7 +4,6 @@ import ru.oxelen.Circle;
 import ru.oxelen.Figure;
 import ru.oxelen.Rectangle;
 import ru.oxelen.Triangle;
-import ru.oxelen.exception.NotValidFigureParametersException;
 
 public class CalculateFiguresTest {
     @Test
