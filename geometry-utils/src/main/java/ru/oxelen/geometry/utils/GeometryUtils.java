@@ -8,6 +8,10 @@ public class GeometryUtils {
         return f1.getArea() == f2.getArea();
     }
 
+    public static boolean isPerimeterEquals(Figure f1, Figure f2) {
+        return f1.getPerimeter() == f2.getPerimeter();
+    }
+
     public static double convert(double value, Units inputUnit, Units outputUnit) {
         if (value < 0) {
             throw new UnitValidationException("Value can't be negative, actual value:  " + value);
