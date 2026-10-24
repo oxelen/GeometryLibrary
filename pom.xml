@@ -12,6 +12,7 @@
     <modules>
         <module>geometry-library</module>
         <module>geometry-utils</module>
+        <module>three-dimensional-shapes</module>
     </modules>
 
     <properties>
