@@ -5,33 +5,24 @@ import lombok.Getter;
 
 @EqualsAndHashCode(callSuper = false)
 @Getter
-public class Cube extends ThreeDimensionalShape {
-    private double side;
-
+public class Cube extends Cuboid {
     public Cube(double side) {
-        checkSide(side);
-
-        this.side = side;
+        super(side, side, side);
     }
 
     public void setSide(double side) {
-        checkSide(side);
-        this.side = side;
+        super.setWidth(side);
+        super.setHeight(side);
+        super.setDepth(side);
     }
 
     @Override
     public double getVolume() {
-        return Math.pow(side, 3);
+        return super.getVolume();
     }
 
     @Override
     public double getArea() {
-        return side * side * 6;
-    }
-
-    private void checkSide(double side) {
-        if (side <= 0) {
-            throw new IllegalArgumentException("Side must be positive");
-        }
+        return super.getArea();
     }
 }
