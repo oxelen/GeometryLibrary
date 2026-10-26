@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>ru.oxelen</groupId>
-        <artifactId>geometry-library-bom</artifactId>
+        <artifactId>geometry-library-parent</artifactId>
         <version>1.0.0</version>
     </parent>
 
